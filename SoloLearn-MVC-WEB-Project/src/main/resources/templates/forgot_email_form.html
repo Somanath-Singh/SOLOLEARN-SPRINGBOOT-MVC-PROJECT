@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<main
+			class="d-flex align-items-center primary-background banner-background "
+			style="height: 70vh;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 offset-md-4">
+
+						<div class="card mt-4 mb-5">
+
+							<div
+								class="card-header primary-background text-white text-center">
+								<br> <span class="fa fa-user-plus fa-3x"></span>
+								<p>ForgotPassword</p>
+							</div>
+
+							<!-- message shown in webpage -->
+							
+							<th:block th:if="${session.msg}">
+							
+							<div class="alert text-center" role="alert" th:classappend="${session.type}">[[${session.msg}]]</div>
+							
+							<th:block th:text="${@userServiceImpl.removeSessionMessage()}"></th:block>
+							
+							</th:block>
+					
+
+							<div class="card-body">
+
+
+								<form action="/otp-send" method="POST">
+
+
+									<div class="mb-3">
+										<label for="exampleInputEmail" class="form-label">Enter
+											your registered email address</label> <input name="email"
+											type="email" placeholder="Registered email ..."
+											class="form-control" id="exampleInputEmail" required>
+									</div>
+
+
+									<div class="mb-3 text-center">
+										<button type="submit" class="btn btn-warning">Send
+											OTP</button>
+									</div>
+
+								</form>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</main>
+
+
+
+	</section>
+
+</body>
+</html>

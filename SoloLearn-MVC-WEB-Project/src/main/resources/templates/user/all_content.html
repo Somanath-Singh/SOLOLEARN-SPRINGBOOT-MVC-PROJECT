@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="card mr-1 ml-3">
+
+
+			<div class="card-body">
+
+				<h3 class="text-center text-secondary fst-italic fw-lighter">All
+					Contents</h3>
+
+
+				<div class="container">
+
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-lg-2 col-6  p-4">
+								<div class="card" style="width: 10rem;">
+									<a href="https://www.programiz.com/"
+										class="card-link text-dark"> <img
+										src="/img/programmize.jpg" class="card-img-top" alt="..."
+										width="100%"></a>
+								</div>
+							</div>
+
+							<div class="col-lg-2 col-6  p-4">
+								<div class="card" style="width: 10rem;">
+									<a href="https://www.geeksforgeeks.org/"
+										class="card-link text-dark"><img src="/img/gfg.jpg"
+										class="card-img-top" alt="..." width="100%"></a>
+								</div>
+							</div>
+
+							<div class="col-lg-2 col-6  p-4">
+								<div class="card" style="width: 10rem;">
+									<a href="https://www.javatpoint.com/"
+										class="card-link text-dark"><img src="/img/tpoint.png"
+										class="card-img-top" alt="..." width="100%"></a>
+								</div>
+							</div>
+
+							<div class="col-lg-2 col-6  p-4">
+								<div class="card" style="width: 10rem;">
+									<a href="https://www.w3schools.com/"
+										class="card-link text-dark"><img src="/img/w3s.png"
+										class="card-img-top" alt="..." width="100%"></a>
+								</div>
+							</div>
+
+							<div class="col-lg-2  col-6  p-4">
+								<div class="card" style="width: 10rem;">
+									<a href="https://www.tutorialspoint.com/index.htm"
+										class="card-link text-dark"><img src="/img/tutorials.png"
+										class="card-img-top" alt="..." width="100%"></a>
+								</div>
+							</div>
+
+							<div class="col-lg-2  col-6  p-4">
+								<div class="card" style="width: 10rem; height: 10rem;">
+									<a href="https://www.hackerrank.com/"
+										class="card-link text-dark"><img src="/img/hacker.jpg"
+										class="card-img-top" alt="..."
+										style="width: 100%; height: fit-content"></a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row justify-content-center">
+
+
+
+						<div class="col-lg-4 p-5" th:each=" content : ${contents}">
+
+							<div class="card link-hover text-center" style="width: 18rem;">
+
+								<div style="height: 160px;">
+
+									<img th:src="@{'/img/'+${content.pic}}" class="card-img-top"
+										alt="..." height="100%">
+
+								</div>
+
+								<div class="card-body text-primary">
+									<h5 class="card-title">[[${content.title}]]</h5>
+									<p class="card-text">[[${content.content}]]</p>
+									<p class="post-date">[[${content.date}]]</p>
+								</div>
+
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item"><a th:href="${content.link1}"
+										class="card-link a-link">[[${content.name1}]]</a></li>
+									<li class="list-group-item"><a th:href="${content.link2}"
+										class="card-link a-link">[[${content.name2}]]</a></li>
+									<li class="list-group-item"><a th:href="${content.link3}"
+										class="card-link a-link">[[${content.name3}]]</a></li>
+								</ul>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+					<!-- Projects -->
+
+					<div class="container mb-5 text-center">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card bg-dark text-white">
+									<img src="/img/p.webp" class="card-img" alt="..."
+										height="350px">
+									<div class="card-img-overlay">
+										<h5 class="card-title">Projects</h5>
+										<p class="card-text">Simply put, a project is a series of
+											tasks that need to be completed to reach a specific outcome.</p>
+										<p>
+											Frontend projects: <a
+												href="https://youtube.com/playlist?list=PL9fjioyw5JU5sMf8I51K4NWON869Ps01T&si=SRu-1Qg4bKzV6FkM">Click
+												here</a>
+										</p>
+										<p>
+											Javascript projects: <a
+												href="https://youtube.com/playlist?list=PLajjpPyc2dmbt0KebBvT9VQV8y2R_IO7j&si=hsH1rTmP2sadeMh-">Click
+												here</a>
+										</p>
+										<p>
+											Core java projects: <a
+												href="https://youtu.be/GEKF890oQYc?si=STfXsTboh6Aw8Nm8">Click
+												here</a>
+										</p>
+										<p>
+											Advanced java projects: <a
+												href="https://youtube.com/playlist?list=PLQTYNpk8jwk33-kHcV0xdBy4L617EVnAt&si=h7I6S08CKnANGw49">play
+												list 1</a> <a
+												href="https://youtube.com/playlist?list=PL0zysOflRCekMr91amXBNwWku4PmeFaFD&si=HOX-IuF2Tewh9x5-">play
+												list 2</a> <a
+												href="https://youtube.com/playlist?list=PL0zysOflRCekb_ggXQYQSu-g-kWKgudBf&si=YufWg7G298zIzIP3">play
+												list 3</a>
+										</p>
+										<p>
+											Python projects: <a
+												href="https://youtube.com/playlist?list=PLjVLYmrlmjGfAUdLiF2bQ-0l8SwNZ1sBl&si=Fc067Bce35rXOzCB">Click
+												here</a>
+										</p>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<script>
+		
+		$(document).ready(() => {
+			
+			$(".item").removeClass("active");
+			
+			$("#content-link").addClass("active");
+			
+			} );
+		
+		</script>
+	</section>
+
+</body>
+</html>
